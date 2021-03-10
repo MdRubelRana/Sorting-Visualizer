@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualizer</title>
+
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- link custom css file -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <h2>Sorting Visualizer</h2>
+                </div>
+            </div>
+          
+        </nav>
+    </header>
+
+
+    <div class="container-fluid main-area">
+        <div class="column left">
+            <div class="array-inputs">
+                <p>Size of the array:</p>
+                <input id="a_size" type="range" min=20 max=150 step=1 value=80>
+                <p>Speed:</p>
+                <input id="a_speed" type="range" min=1 max=5 step=1 value=4>
+                <button id="a_generate">Generate New Array</button>
+            </div>
+        </div>
+        <div class="column middle">
+            <div id="array_container">
+                
+            </div>
+        </div>
+    </div>
+
+    <section class="container sort-algo-name-section" id="wrapper">
+        <div class="algos">
+            <button class="active">Bubble</button>
+            <button >Selection</button>
+            <button >Insertion</button>
+            <button >Merge</button>
+            <button >Quick</button>
+            <button >Heap</button>
+        </div>
+    </section>
+    
+
+    <footer>
+        <p>****Made with 💖 in Bangladesh by Md Rubel Rana****</p>
+    </footer>
+    
+
+    
+
+
+    <!-- jQuery cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+
+    <script src="assets/algorithms/bubble_sort.js"></script>
+    
+    <script src="assets/js/animations.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
