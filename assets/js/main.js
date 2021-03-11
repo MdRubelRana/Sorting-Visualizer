@@ -6,7 +6,7 @@ var inp_gen=document.getElementById("a_generate");
 var inp_aspeed=document.getElementById("a_speed");
 //var array_speed=document.getElementById('a_speed').value;
 
-var butts_algos=document.querySelectorAll(".algos button");
+var butts_algos=document.querySelectorAll(".algo-button button");
 
 var div_sizes=[];
 var divs=[];
@@ -44,7 +44,7 @@ window.onload=update_array_size();
 //Running the appropriate algorithm.
 for(var i=0;i<butts_algos.length;i++)
 {
-    butts_algos[i].addEventListener("click",runalgo);
+    butts_algos[i].addEventListener("click",runAlgo);
 }
 
 function disable_buttons()
@@ -61,24 +61,35 @@ function disable_buttons()
     }
 }
 
-function runalgo()
+function runAlgo()
 {
     disable_buttons();
 
-    this.classList.add("butt_selected");
+    this.classList.add("active");
     switch(this.innerHTML)
     {
-        case "Bubble":Bubble();
-                        break;
-        case "Selection":Selection_sort();
-                        break;
-        case "Insertion":Insertion();
-                        break;
-        case "Merge":Merge();
-                        break;
-        case "Quick":Quick();
-                        break;
-        case "Heap":Heap();
-                        break;
+        case "Bubble":
+            Bubble();
+            break;
+
+        case "Selection":
+            Selection_sort();
+            break;
+
+        case "Insertion":
+            Insertion();
+            break;
+
+        case "Merge":
+            Merge();
+            break;
+
+        case "Quick":
+            Quick();
+            break;
+            
+        case "Heap":
+            Heap();
+            break;
     }
 }
