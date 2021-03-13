@@ -1,12 +1,12 @@
 
 
-//Variables (BE CAREFUL THESE MIGHT BE USED IN OTHER JS FILES TOO)
-var inp_as=document.getElementById('a_size'),array_size=inp_as.value;
-var inp_gen=document.getElementById("a_generate");
-var inp_aspeed=document.getElementById("a_speed");
-//var array_speed=document.getElementById('a_speed').value;
 
-var butts_algos=document.querySelectorAll(".algo-button button");
+var input_array_size=document.getElementById('array-size'), array_size=input_array_size.value;
+var input_generate_array=document.getElementById("generate-array");
+var input_sort_speed=document.getElementById("sort-speed");
+
+
+var button_algo=document.querySelectorAll(".algo-button button");
 
 var div_sizes=[];
 var divs=[];
@@ -14,18 +14,17 @@ var margin_size;
 var cont=document.getElementById("array_container");
 cont.style="flex-direction:row";
 
-//Array generation and updation.
 
-inp_gen.addEventListener("click",generate_array);
-inp_as.addEventListener("input",update_array_size);
 
-function generate_array()
-{
+input_generate_array.addEventListener("click", generateNewArray);
+input_array_size.addEventListener("input", updateArraySize);
+
+function generateNewArray(){
     cont.innerHTML="";
 
-    for(var i=0;i<array_size;i++)
+    for(var i = 0; i < array_size; i++)
     {
-        div_sizes[i]=Math.floor(Math.random() * 0.5*(inp_as.max - inp_as.min) ) + 10;
+        div_sizes[i]=Math.floor(Math.random() * 0.5*(input_array_size.max - input_array_size.min) ) + 10;
         divs[i]=document.createElement("div");
         cont.appendChild(divs[i]);
         margin_size=0.2;
@@ -33,63 +32,59 @@ function generate_array()
     }
 }
 
-function update_array_size()
-{
-    array_size=inp_as.value;
-    generate_array();
+function updateArraySize(){
+    array_size=input_array_size.value;
+    generateNewArray();
 }
 
-window.onload=update_array_size();
+window.onload=updateArraySize();
 
-//Running the appropriate algorithm.
-for(var i=0;i<butts_algos.length;i++)
-{
-    butts_algos[i].addEventListener("click",runAlgo);
+
+for(var i = 0; i < button_algo.length; i++){
+    button_algo[i].addEventListener("click", runSortingAlgo);
 }
 
-function disable_buttons()
-{
-    for(var i=0;i<butts_algos.length;i++)
+function disabledButton(){
+    for(var i=0;i<button_algo.length;i++)
     {
-        butts_algos[i].classList=[];
-        butts_algos[i].classList.add("butt_locked");
+        button_algo[i].classList=[];
+        button_algo[i].classList.add("butt_locked");
 
-        butts_algos[i].disabled=true;
-        inp_as.disabled=true;
-        inp_gen.disabled=true;
-        inp_aspeed.disabled=true;
+        button_algo[i].disabled=true;
+        input_array_size.disabled=true;
+        input_generate_array.disabled=true;
+        input_sort_speed.disabled=true;
     }
 }
 
-function runAlgo()
-{
-    disable_buttons();
+function runSortingAlgo(){
+    disabledButton();
 
     this.classList.add("active");
     switch(this.innerHTML)
     {
         case "Bubble":
-            Bubble();
+            bubbleSort();
             break;
 
         case "Selection":
-            Selection_sort();
+            selectionSort();
             break;
 
         case "Insertion":
-            Insertion();
+            insertionSort();
             break;
 
         case "Merge":
-            Merge();
+            mergeSort();
             break;
 
         case "Quick":
-            Quick();
+            quickSort();
             break;
             
         case "Heap":
-            Heap();
+            heapSort();
             break;
     }
 }
