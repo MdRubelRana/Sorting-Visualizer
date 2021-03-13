@@ -28,7 +28,7 @@ function generateNewArray(){
         divs[i]=document.createElement("div");
         cont.appendChild(divs[i]);
         margin_size=0.2;
-        divs[i].style=" margin:0%" + margin_size + "%; background-color:blue; width:" + (100/array_size-(2*margin_size)) + "%; height:" + (div_sizes[i]) + "%;";
+        divs[i].style="margin:0%" + margin_size + "%; background-color:#2d3436; border-radius: 5px; width:" + (100/array_size-(2*margin_size)) + "%; height:" + (div_sizes[i]) + "%;";
     }
 }
 
@@ -45,10 +45,10 @@ for(var i = 0; i < button_algo.length; i++){
 }
 
 function disabledButton(){
-    for(var i=0;i<button_algo.length;i++)
+    for(var i = 0; i < button_algo.length; i++)
     {
         button_algo[i].classList=[];
-        button_algo[i].classList.add("butt_locked");
+        button_algo[i].classList.add("disabled_button");
 
         button_algo[i].disabled=true;
         input_array_size.disabled=true;

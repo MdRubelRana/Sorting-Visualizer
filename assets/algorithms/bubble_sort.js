@@ -19,7 +19,7 @@ function bubbleSort()
                 divUpdate(divs[j], div_sizes[j], "red");
                 divUpdate(divs[j + 1], div_sizes[j + 1], "red");
             }
-            divUpdate(divs[j], div_sizes[j], "blue");
+            divUpdate(divs[j], div_sizes[j], "#2d3436");
         }
         divUpdate(divs[j], div_sizes[j], "green");
     }

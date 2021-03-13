@@ -54,20 +54,23 @@ nav{
     cursor: pointer;
     border: 1px solid tomato;
     color: tomato;
-  }
+}
+
   
 .array-inputs #generate-array:hover{
     cursor: pointer;
 }
  
-.header_right .algo-button .butt_locked{
+.algo-button .disabled_button{
     background-color: transparent;
-    cursor: pointer;
+    cursor: no-drop;
 }
   
-nav .header_right .algo-button .butt_locked:hover{
+.algo-button .disabled_button:hover{
     background-color: transparent;
-    cursor: pointer;
+    cursor: no-drop;
+    border: 1px solid #d4d4d4;
+    color: #d4d4d4;
 }
   
 
