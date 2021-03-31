@@ -24,7 +24,8 @@ function generateNewArray(){
 
     for(var i = 0; i < array_size; i++)
     {
-        div_sizes[i]=Math.floor(Math.random() * 0.5*(input_array_size.max - input_array_size.min) ) + 10;
+        div_sizes[i]=Math.floor(Math.random() * 0.5 *(input_array_size.max - input_array_size.min) ) + 10;
+        console.log(div_sizes[i]);
         divs[i]=document.createElement("div");
         cont.appendChild(divs[i]);
         margin_size=0.2;
@@ -67,20 +68,8 @@ function runSortingAlgo(){
             bubbleSort();
             break;
 
-        case "Selection":
-            selectionSort();
-            break;
-
         case "Insertion":
             insertionSort();
-            break;
-
-        case "Merge":
-            mergeSort();
-            break;
-
-        case "Quick":
-            quickSort();
             break;
             
         case "Heap":
@@ -88,3 +77,7 @@ function runSortingAlgo(){
             break;
     }
 }
+
+
+
+

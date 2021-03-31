@@ -36,12 +36,6 @@ nav{
 }
   
 .array-inputs #generate-array{
-    /* border: 1px solid #d4d4d4;
-    background-color: rgb(235, 235, 235);
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 0px 5px;
-    text-align: center; */
     text-align: center;
     margin: 25px 0px;
     border-radius: 5px;
@@ -63,12 +57,12 @@ nav{
  
 .algo-button .disabled_button{
     background-color: transparent;
-    cursor: no-drop;
+    cursor: not-allowed;
 }
   
 .algo-button .disabled_button:hover{
     background-color: transparent;
-    cursor: no-drop;
+    cursor: not-allowed;
     border: 1px solid #d4d4d4;
     color: #d4d4d4;
 }
